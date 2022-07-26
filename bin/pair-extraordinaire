@@ -8,7 +8,7 @@ git checkout -B $BRANCHNAME
 
 for i in {0..120}
 do
-  git commit --allow-empty -m $'An empty commit.\n\nCo-authored-by: Casey Foster <c@sey.me>\nCo-authored-by: Andrew Kavas <ask410ventures@gmail.com>'
+  git commit --allow-empty -m $'An empty commit.\n\nCo-authored-by: Nathaniel Pendy <n@thaniel.dev>'
 done
 
 git push -u origin $BRANCHNAME

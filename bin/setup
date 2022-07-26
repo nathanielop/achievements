@@ -9,5 +9,5 @@ if [ "$REPO_CREATED" = "false" ]; then
   cd $REPONAME
   git init
   gh repo clone -u $REPONAME
-  # set REPOCREATED to false
+  sed -i '' -e "s/REPO_CREATED=.*/REPO_CREATED=true/" ../.env
 fi
