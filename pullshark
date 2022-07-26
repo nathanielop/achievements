@@ -1,0 +1,28 @@
+#!/bin/sh -e
+
+REPONAME=achievement
+INT=0
+
+gh repo create $REPONAME --private
+mkdir ./$REPONAME
+cd $REPONAME
+git init
+gh repo clone -u $REPONAME
+
+for i in {0..1024}
+do
+    BRANCHNAME="branch-$INT"
+
+    git checkout -B $BRANCHNAME
+    git commit --allow-empty -m "A commit message."
+    git push -u origin $BRANCHNAME
+
+    gh pr create -f
+    gh pr merge --merge --delete-branch
+
+    sleep 1m
+
+    INT=$(($INT+1))
+done
+
+gh repo delete --confirm $REPONAME
