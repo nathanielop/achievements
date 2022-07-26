@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+sh setup
+
+BRANCHNAME="pullshark"
+
+for i in {0..1024}
+do
+  git checkout -B $BRANCHNAME
+  git commit --allow-empty -m "A commit message."
+  git push -u origin $BRANCHNAME
+
+  gh pr create -f
+  gh pr merge --merge --delete-branch
+
+  sleep 1m
+done
+
+sh teardown

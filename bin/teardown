@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+REPONAME=$(grep -Po '(?<=REPONAME=).*' ../.env)
+
+gh repo delete --confirm $REPONAME

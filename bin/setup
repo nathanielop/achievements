@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+REPONAME=$(grep -Po '(?<=REPONAME=).*' ../.env)
+REPO_CREATED=$(grep -Po '(?<=REPO_CREATED=).*' ../.env)
+
+if [ "$REPO_CREATED" = "false" ]; then
+  gh repo create $REPONAME --private
+  mkdir ./$REPONAME
+  cd $REPONAME
+  git init
+  gh repo clone -u $REPONAME
+  # set REPOCREATED to false
+fi
