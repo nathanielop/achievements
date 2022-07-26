@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-sh setup
+sh bin/setup
 
 BRANCHNAME="pullshark"
 
@@ -16,4 +16,4 @@ do
   sleep 1m
 done
 
-sh teardown
+sh bin/teardown

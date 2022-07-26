@@ -1,13 +1,12 @@
 #!/bin/sh -e
 
-REPONAME=$(grep -Po '(?<=REPONAME=).*' ../.env)
-REPO_CREATED=$(grep -Po '(?<=REPO_CREATED=).*' ../.env)
+export $(cat .env | sed 's/#.*//g'| xargs)
 
 if [ "$REPO_CREATED" = "false" ]; then
   gh repo create $REPONAME --private
   mkdir ./$REPONAME
   cd $REPONAME
   git init
-  gh repo clone -u $REPONAME
+  gh repo clone $REPONAME
   sed -i '' -e "s/REPO_CREATED=.*/REPO_CREATED=true/" ../.env
 fi

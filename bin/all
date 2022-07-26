@@ -1,5 +1,5 @@
 #/bin/sh -e
 
-sh pullshark
-sh quickdraw
-sh pair-extraordinaire
+sh bin/pullshark
+sh bin/quickdraw
+sh bin/pair-extraordinaire

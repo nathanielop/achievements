@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-sh setup
+sh bin/setup
 
 BRANCHNAME="quickdraw"
 
@@ -11,4 +11,4 @@ git push -u origin $BRANCHNAME
 gh pr create -f
 gh pr merge --merge --delete-branch
 
-sh teardown
+sh bin/teardown
