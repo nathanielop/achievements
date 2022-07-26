@@ -7,7 +7,10 @@ if [ "$REPO_CREATED" = "false" ]; then
   mkdir ./$REPONAME
   cd ./$REPONAME
   git init
-  gh repo clone $REPONAME
+  git commit --allow-empty -m "Setup"
+  git branch -M main
+  git remote add origin git@github.com:$(echo git config user.name)/$REPONAME.git
+  git push -u origin main
   sed -i '' -e "s/REPO_CREATED=.*/REPO_CREATED=true/" ../.env
 else 
   cd ./$REPONAME
