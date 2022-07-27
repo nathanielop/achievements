@@ -3,16 +3,15 @@
 export $(cat .env | sed 's/#.*//g'| xargs)
 
 if [ "$REPO_CREATED" = "false" ]; then
-  gh repo create $REPONAME --private
-  mkdir ./$REPONAME
-  cd ./$REPONAME
+  sed -i '' -e "s/REPO_CREATED=.*/REPO_CREATED=true/" .env
+  mkdir ../container
+  cd ../container
+  gh repo create $REPONAME --private --clone
+  
+  cd $REPONAME
   git init
-  git commit --allow-empty -m "Setup"
-  git branch -M main
-  git remote add origin git@github.com:$(echo git config user.name)/$REPONAME.git
-  git push -u origin main
-  sed -i '' -e "s/REPO_CREATED=.*/REPO_CREATED=true/" ../.env
+  git checkout -B main
 else 
-  cd ./$REPONAME
+  cd ../$REPONAME
 fi
 
