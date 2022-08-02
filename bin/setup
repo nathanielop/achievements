@@ -1,17 +1,25 @@
-#!/bin/sh -e
+#!/bin/bash -e
+# https://github.com/MasterPi-2124/achievements/blob/master/bin/setup
+
+set -e # Stop on error states
+
+if [ ! -f ".env" ]; then
+  cp .env.default .env
+fi
 
 export $(cat .env | sed 's/#.*//g'| xargs)
 
-if [ "$REPO_CREATED" = "false" ]; then
-  sed -i '' -e "s/REPO_CREATED=.*/REPO_CREATED=true/" .env
-  mkdir ../container
-  cd ../container
-  gh repo create $REPONAME --private --clone
-  
-  cd $REPONAME
-  git init
-  git checkout -B main
-else 
-  cd ../$REPONAME
+if [ ! -d "container" ]; then
+  mkdir container
 fi
 
+if [ "$REPO_CREATED" = "false" ]; then
+  sed -i "s/REPO_CREATED=false/REPO_CREATED=true/g" .env
+  cd container
+  gh repo create $REPO_NAME --private --clone
+  cd $REPO_NAME
+else
+  cd container/$REPO_NAME
+fi
+
+echo $REPO_NAME

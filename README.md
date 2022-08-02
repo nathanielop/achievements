@@ -10,9 +10,9 @@ A collection of shell scripts to achieve 100% of API-accessible Github achieveme
 Gain any individual achievement by running the name of that achievement directly;
 
 #### Example
-`sh pullshark`
+`bash pullshark`
 
-Or, to gain all achievements, simply run `sh all`
+Or, to gain all achievements, simply run `bash all`
 
 | Warning: This process can take upwards of several hours in order to not result in a rate limit from the API. It is recommended to let this script run in the background. |
 | --- |

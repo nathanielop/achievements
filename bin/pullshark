@@ -1,6 +1,6 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
-sh bin/setup
+bash bin/setup
 
 BRANCHNAME="pullshark"
 
@@ -13,7 +13,7 @@ do
   gh pr create -f
   gh pr merge --merge --delete-branch
 
-  sleep 60
+  sleep $(($TIMEOUT))
 done
 
-sh bin/teardown
+bash bin/teardown
