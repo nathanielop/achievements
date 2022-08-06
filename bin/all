@@ -1,6 +1,6 @@
-#/bin/bash -e
+#/bin/bash
 
-bash bin/pullshark
-bash bin/quickdraw
-bash bin/pair-extraordinaire
-bash bin/yolo
+bash pullshark
+bash quickdraw
+bash pair-extraordinaire
+bash yolo
