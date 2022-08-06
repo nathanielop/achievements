@@ -28,9 +28,10 @@ git remote add origin git@github.com:[YOUR USERNAME HERE]/achievements.git
 Gain any individual achievement by running the name of that achievement directly;
 
 #### Example
-`bash pullshark`
-
-Or, to gain all achievements, simply run `bash all`
+```
+cd bin && bash pullshark
+```
+Or, to gain all achievements, simply run `cd bin && bash all`
 
 | Warning: This process can take upwards of several hours in order to not result in a rate limit from the API. It is recommended to let this script run in the background. |
 | --- |
