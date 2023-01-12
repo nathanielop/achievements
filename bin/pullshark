@@ -2,7 +2,7 @@
 
 bash bin/setup
 
-BRANCHNAME="Heart prediction"
+BRANCHNAME="Heart prediction again"
 
 for i in {0..1024}
 do
