@@ -2,12 +2,12 @@
 
 bash bin/setup
 
-BRANCHNAME="pullshark"
+BRANCHNAME="Heart prediction"
 
 for i in {0..1024}
 do
   git checkout -B $BRANCHNAME
-  git commit --allow-empty -m "A commit message."
+  git commit --allow-empty -m "Empty project created"
   git push -u origin $BRANCHNAME
 
   gh pr create -f
