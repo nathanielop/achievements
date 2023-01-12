@@ -4,6 +4,7 @@ bash bin/setup
 
 BRANCHNAME="Heart prediction again"
 
+
 for i in {0..1024}
 do
   git checkout -B $BRANCHNAME
@@ -17,3 +18,4 @@ do
 done
 
 bash bin/teardown
+print "process completed"
