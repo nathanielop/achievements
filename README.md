@@ -25,7 +25,7 @@ git remote add origin git@github.com:[YOUR USERNAME HERE]/achievements.git
 
 ### Running Achievement Scripts
 
-Gain any individual achievement by running the name of that achievement directly;
+Gain any individual achievement by running the name of that achievement directly; e.g. `bash bin/quickdraw`
 
 #### Example
 `bash pullshark`
