@@ -1,5 +1,5 @@
 #!/bin/bash -e
 
 rm -rf $REPONAME
-gh auth refresh -h github.com -s delete_repo
-gh repo delete --confirm $REPONAME
+git auth refresh -h github.com -s delete_repo
+git repo delete --confirm $REPONAME
