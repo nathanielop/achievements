@@ -3,6 +3,8 @@
 
 set -e # Stop on error states
 
+bash bin/validate-remote
+
 if [ ! -f ".env" ]; then
   cp .env.default .env
 fi

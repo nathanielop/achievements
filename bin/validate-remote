@@ -1,0 +1,7 @@
+#/bin/bash -e
+
+REMOTE=$(git remote -v)
+if [[ $REMOTE == *"nathanielop/achievements"* ]]; then
+    printf '%s\n' "[ERROR]: You are attempting to create a PR against the original repository, nathanielop/achievements. Please fork this repository and change your git remote in order for this package to work properly." >&2
+    exit 1 
+fi
