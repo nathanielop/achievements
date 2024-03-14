@@ -1,5 +1,5 @@
-# achievements
-A collection of shell scripts to achieve 100% of API-accessible Github achievements
+# achievementsaaa
+A collection of shell scripts to achieve 100% of API-accessible Github achievementsa
 
 ## Prerequisites
 - `gh` Github CLI Installed
