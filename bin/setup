@@ -1,5 +1,5 @@
 #!/bin/bash -e
-# https://github.com/MasterPi-2124/achievements/blob/master/bin/setup
+# https://github.com/aleless/achievements/blob/main/bin/setup
 
 set -e # Stop on error states
 
