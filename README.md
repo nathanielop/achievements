@@ -1,6 +1,8 @@
 # achievements
 A collection of shell scripts to achieve 100% of API-accessible Github achievements
 
+For an improved and easier to use version, click [here](https://github.com/MasterPi-2124/achievements).
+
 ## Prerequisites
 - `gh` Github CLI Installed
 - `gh auth login` Must be ran and completed successfully
